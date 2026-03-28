@@ -57,11 +57,11 @@ def main_menu():
         print("Main Menu")
         print("-"*30)
 
-        choice=input("Enter the choice : ").strip();
+        choice=input("Enter the choice : ").strip()
         if choice == '0':
             print("BYE BYE !! ENJOY YOUR DAY..")
             break
-        if choice=='1':
+        if choice == '1':
             book_menu()
         elif choice=='2':
             print("In Member")
@@ -82,9 +82,11 @@ def main_menu():
 
 
 def login():
+    # Entering Credential
     user=input("Enter the username :")
     password=input("Enter the password :")
 
+    # Check or verify crdential
     if (library[0]==user and library[1]==password):
         main_menu()
     else:
