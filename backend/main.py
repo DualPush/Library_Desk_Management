@@ -33,11 +33,11 @@ def book_menu():
             case '0':
                 break
             case '1':
-                show_book()
+                Flow.show_book()
             case '2':
                 Flow.insertions_entries(connection)
             case '3':
-                edit_book()
+                Flow.edit_book()
             case '4':
                 pass       
     
