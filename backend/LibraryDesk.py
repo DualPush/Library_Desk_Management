@@ -47,8 +47,7 @@ class Library:
 
         except Exception as e:
             print(" Error:", e)
-    
-    # Showing Member
+            
     def show_member(self,cursor):
 
         query="""
@@ -59,6 +58,5 @@ class Library:
         # Print table header
         print(tabulate(rows, headers=["ID", "Name"], tablefmt="grid"))
 
-        
         
         
