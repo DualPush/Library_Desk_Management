@@ -2,6 +2,7 @@ import Flow
 from DB_connector import SQL_connection
 
 
+
 library=["Admin","1234@"]
 
 connection = SQL_connection()
@@ -15,7 +16,10 @@ def edit_book():
 
 
 def book_menu():
+    print("-"*30)
     print("WELCOME TO BOOK MENU BAR")
+    print("-"*30)
+    
     while True:
         print("Coices:- ")
         print("1. SHOW BOOKS")
@@ -38,49 +42,74 @@ def book_menu():
                 pass       
     
 
+# --------------Member menu-----------------
+def member_menu():
+    while True:
+        print("-"*30)
+        print("Member Menu Choice")
+        print("-"*30)
 
+        print("1 :  For adding member")
+        print("2 :  For Knowing member")
+        print("3 :  For Editing member")
+        print("0 :  For Return to Main menu")
+
+        print("-"*30)
+        print("Member Menu")
+        print("-"*30)
+
+        choice=int(input("Enter the choice : "))
+        if choice==1:
+            Flow.add_member(connection)
+        elif choice==2:
+            Flow.show_member(connection)
+        elif choice==3:
+            Flow.edit_member(connection)
+            print("Edit Successfully that member")
+        else:
+            print("Chal Bye : 👋👋👋👋👋")
+            break
+
+
+# ------------Main Menu Entry function------------
 def main_menu():
     while True:
         print("-"*30)
         print("Main Menu")
         print("-"*30)
 
-        print("1 : FOR BOOK")
-        print("2 : FOR MEMBER")
-        print("3 : FOR ISSUE")
-        print("4 : FOR RETURN")
-        print("5 : FOR PAYMENTS")
-        print("6 : FOR REPORTS")
-        print("0 : FOR EXIT FROM MENU")
+        print("1 : 📚 FOR BOOK ")
+        print("2 : 🙍 FOR MEMBER")
+        print("3 : 📝 FOR ISSUE")
+        print("4 : ℹ️  FOR RETURN")
+        print("5 : 💵 FOR PAYMENTS")
+        print("6 : 📜 FOR REPORTS")
+        print("0 : 👋 FOR EXIT FROM MENU")
 
         print("-"*30)
         print("Main Menu")
         print("-"*30)
 
-        choice=input("Enter the choice : ").strip()
-        if choice == '0':
-            print("BYE BYE !! ENJOY YOUR DAY..")
-            break
-        if choice == '1':
-            book_menu()
-        elif choice=='2':
-            print("In Member")
-        elif choice=='3':
+        choice=int(input("Enter the choice : "))
+
+        if choice==1:
+            print("IN BOOK")
+        elif choice==2:
+            member_menu()
+        elif choice==3:
             print("In ISSUE")
-        elif choice=='4':
+        elif choice==4:
             print("In RETURN")
-        elif choice=='5':
+        elif choice==5:
             print("In PAYMENT")
-        elif choice=='6':
+        elif choice==6:
             print("In Report")
         else:
             print("CHALA JA BSDK : 😂😂😂😂😂😂")
             break
         
 
-
-
-
+# ------------Enrty Login function-----------------
 def login():
     # Entering Credential
     user=input("Enter the username :")

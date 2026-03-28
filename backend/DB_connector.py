@@ -4,9 +4,9 @@ class SQL_connection:
     def __init__(self):
         self.connection = mysql.connector.connect(
             host = "127.0.0.1",
-            database = "hackathon_db",
+            database = "hackathonDB",
             user = "root",
-            password = "manager"
+            password = "Mayank@92Dev9"
         )
     
     # getting cursor for passing as a parameter
