@@ -17,4 +17,5 @@ class insertions_book:
         """
         values = (self.title,self.author,self.subject,self.isbn,self.price)
         
-        cursor.execute(query,values)      
+        cursor.execute(query,values)
+        print("Added Book successfully")      

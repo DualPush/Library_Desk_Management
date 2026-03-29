@@ -1,11 +1,12 @@
 from tabulate import tabulate
+import time
 
 
 class Library:
     def __init__(self):
         pass
     
-    # for printing book table
+    # Showing Book in table
     def book_data(self,cursor):
         self.cursor = cursor
         print('-'*10)
@@ -22,7 +23,9 @@ class Library:
             book_id, title, author, subject, isbn, price = row
             print(f"{book_id:<7}| {title:<15}| {author:<15}| {subject:<15}| {isbn:<15}| {price:<15}")         
         print('-'*90)
+        time.sleep(3)
         
+    # Editing Book function body
     def edit_book(self,cursor):
         self.cursor = cursor
         self.book_data(cursor)

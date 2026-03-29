@@ -8,36 +8,29 @@ library=["Admin","1234@"]
 connection = SQL_connection()
 
 
-def show_book():
-    pass
-
-def edit_book():
-    pass
-
-
 def book_menu():
-    print("-"*30)
-    print("WELCOME TO BOOK MENU BAR")
-    print("-"*30)
-    
     while True:
-        print("Coices:- ")
+        print("-"*30)
+        print("WELCOME TO BOOK MENU BAR Choice")
+        print("-"*30)
         print("1. SHOW BOOKS")
         print("2. ADD NEW BOOK")
         print("3. EDIT BOOK")
         print("4. ADD COPY OF BOOK")
         print("0. BACK TO PREVIOUS MENU")
-      
+        print("-"*30)
+        print("Member Menu Choice")
+        print("-"*30)
         choice = input("Enter your choice: ").strip()     
         match choice:
             case '0':
                 break
             case '1':
-                Flow.show_book()
+                Flow.show_book(connection)
             case '2':
                 Flow.insertions_entries(connection)
             case '3':
-                Flow.edit_book()
+                Flow.edit_book(connection)
             case '4':
                 pass       
     
@@ -93,7 +86,7 @@ def main_menu():
         choice=int(input("Enter the choice : "))
 
         if choice==1:
-            print("IN BOOK")
+            book_menu()
         elif choice==2:
             member_menu()
         elif choice==3:
